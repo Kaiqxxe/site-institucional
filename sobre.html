@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Visão Informática</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body style="background: linear-gradient(to bottom, #000040, #1C1C1C); color: white; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="img/visao logo.png" alt="Logo" height="40" class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://glpi.visaoinformaticapb.com.br/">Área do cliente</a></li>
+          <li class="nav-item"><a class="nav-link active" href="planos.html">Planos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="text-white py-5" style="background: transparent;">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold mb-4">Sobre a Visão Informática</h1>
+      <p class="lead mb-4">Especialistas em tecnologia com foco na excelência e satisfação do cliente</p>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p class="text-light">Conheça nossa história, missão e os serviços que oferecemos para manter sua tecnologia sempre funcionando</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Seção Missão -->
+  <section class="py-5 text-white" style="background: rgba(255,255,255,0.05);">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Nossa Missão</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p class="lead">Melhorar continuamente nossos serviços, buscando a excelência, qualidade, responsabilidade e confiança no apoio ao negócio de nossos parceiros e clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção História -->
+  <section class="py-5 text-white" style="background: transparent;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-4">Nossa História</h2>
+          <p class="mb-3">A Visão Informática nasceu da paixão pela tecnologia e do desejo de oferecer soluções de qualidade para empresas e pessoas físicas em Pimenta Bueno e região.</p>
+          <p class="mb-3">Ao longo dos anos, construímos uma reputação sólida baseada na confiança, competência técnica e atendimento personalizado, sempre priorizando a satisfação de nossos clientes.</p>
+          <p>Hoje, somos referência em manutenção e suporte técnico, oferecendo desde serviços pontuais até planos completos de manutenção preventiva.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="img/foto visao.jpeg" class="img-fluid rounded shadow" alt="Visão Informática">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços Prestados -->
+  <section class="py-5 text-white" style="background: rgba(255,255,255,0.05);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Nossos Serviços</h2>
+        <p class="lead">Clique em cada serviço para conhecer mais detalhes</p>
+      </div>
+      <div class="text-center">
+        <div id="servicesButtons">
+          <button class="btn btn-computadores text-white" onclick="showService('computadores')">
+            <i class="bi bi-pc-display"></i> Computadores
+          </button>
+          <button class="btn btn-notebooks text-white" onclick="showService('notebooks')">
+            <i class="bi bi-laptop"></i> Notebooks
+          </button>
+          <button class="btn btn-nobreaks text-white" onclick="showService('nobreaks')">
+            <i class="bi bi-battery-charging"></i> Nobreaks
+          </button>
+          <button class="btn btn-impressoras text-white" onclick="showService('impressoras')">
+            <i class="bi bi-printer"></i> Impressoras
+          </button>
+        </div>
+
+        <!-- Box -->
+        <div class="service-box mx-auto" id="serviceBox">
+          <div class="text-center mb-3">
+            <img id="serviceImage" src="" alt="" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+          </div>
+          <h3 id="serviceTitle" class="text-center mb-3"></h3>
+          <div id="serviceContent" class="text-justify"></div>
+          <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="closeService()">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Contato -->
+  <section class="py-5 text-white" style="background: transparent;">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Entre em Contato</h2>
+      <p class="lead mb-4">Estamos prontos para atender suas necessidades em tecnologia</p>
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+          <i class="bi bi-envelope fs-2 text-info mb-3"></i>
+          <h6>Email</h6>
+          <p class="text-light">suporte@visaoinformaticapb.com.br</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <i class="bi bi-telephone fs-2 text-success mb-3"></i>
+          <h6>Telefone</h6>
+          <p class="text-light">(69) 3451-7869</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <i class="bi bi-geo-alt fs-2 text-warning mb-3"></i>
+          <h6>Endereço</h6>
+          <p class="text-light">Av Presidente Kennedy, 292<br>Pimenta Bueno/RO</p>
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=556934517869" target="_blank" class="btn btn-light btn-lg mt-3">
+        <i class="bi bi-whatsapp text-success me-2 fs-5"></i>Fale Conosco
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-3 mt-auto" style="background: transparent;">
+    <p class="mb-0">&copy; 2025 Visão Informática. Todos os direitos reservados.</p>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script>
+    const services = {
+      computadores: {
+        title: "Computadores",
+        image: "https://copilot.microsoft.com/th/id/BCO.88e33247-b138-4d1b-ac10-9c51aca20d63.png",
+        content: `<strong>Assistência técnica completa em computadores:</strong>
+                  <ul class="mt-2">
+                    <li>Formatação e reinstalação do sistema</li>
+                    <li>Upgrades de hardware (memória, HD, SSD)</li>
+                    <li>Montagem personalizada</li>
+                    <li>Manutenção preventiva e limpeza</li>
+                    <li>Diagnóstico e reparo de problemas</li>
+                  </ul>`
+      },
+      notebooks: {
+        title: "Notebooks",
+        image: "https://copilot.microsoft.com/th/id/BCO.f2b48056-d88b-425c-bfee-83ad951999e6.png",
+        content: `<strong>Serviços especializados para notebooks:</strong>
+                  <ul class="mt-2">
+                    <li>Troca de tela, teclado e touchpad</li>
+                    <li>Limpeza interna e troca de pasta térmica</li>
+                    <li>Otimização de desempenho</li>
+                    <li>Reparo de conectores e portas</li>
+                    <li>Suporte técnico especializado</li>
+                  </ul>`
+      },
+      nobreaks: {
+        title: "Nobreaks",
+        image: "https://copilot.microsoft.com/th/id/BCO.0dd0e0d7-049e-4321-bf92-7054f6818089.png",
+        content: `<strong>Manutenção completa em nobreaks:</strong>
+                  <ul class="mt-2">
+                    <li>Troca de bateria e teste de autonomia</li>
+                    <li>Reparos eletrônicos e calibração</li>
+                    <li>Testes de carga e estabilização</li>
+                    <li>Limpeza e manutenção preventiva</li>
+                    <li>Suporte técnico especializado</li>
+                  </ul>`
+      },
+      impressoras: {
+        title: "Impressoras",
+        image: "https://copilot.microsoft.com/th/id/BCO.694ef720-2af9-43db-9b6a-b8cf1ae0e531.png",
+        content: `<strong>Assistência em impressoras jato de tinta e laser:</strong>
+                  <ul class="mt-2">
+                    <li>Reparo de mecanismos e sensores</li>
+                    <li>Troca de peças e componentes</li>
+                    <li>Configuração e instalação</li>
+                    <li>Limpeza completa dos cabeçotes</li>
+                    <li>Manutenção preventiva</li>
+                  </ul>`
+      }
+    };
+
+    function showService(serviceKey) {
+      const service = services[serviceKey];
+      document.getElementById("serviceTitle").textContent = service.title;
+      document.getElementById("serviceContent").innerHTML = service.content;
+      document.getElementById("serviceImage").src = service.image;
+      document.getElementById("serviceImage").alt = service.title;
+
+      document.getElementById("serviceBox").classList.add("active");
+      document.getElementById("servicesButtons").classList.add("collapsed");
+    }
+
+    function closeService() {
+      document.getElementById("serviceBox").classList.remove("active");
+      document.getElementById("servicesButtons").classList.remove("collapsed");
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

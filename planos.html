@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="background: linear-gradient(to bottom, #000040, #1C1C1C); color: white; min-height: 100vh; display: flex; flex-direction: column;">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
@@ -21,63 +21,73 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="https://glpi.visaoinformaticapb.com.br/">Área do cliente</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
           <li class="nav-item"><a class="nav-link active" href="planos.html">Planos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <header class="bg-dark text-white text-center p-5">
-    <div class="container">
-      <h1 class="fw-bold">Conheça nossos planos</h1>
-      <p class="lead">Mantenha seus equipamentos sempre funcionando com nossos planos de manutenção preventiva</p>
+  <header class="text-white py-5" style="background: transparent;">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold mb-4">Planos de Manutenção</h1>
+      <p class="lead mb-4">Escolha o plano ideal para manter seus equipamentos sempre funcionando perfeitamente</p>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p class="text-light">Oferecemos três opções de planos para atender diferentes necessidades, desde manutenção básica até suporte técnico especializado</p>
+        </div>
+      </div>
     </div>
   </header>
 
   <!-- Seção de Planos -->
-  <section class="py-5">
+  <section class="py-5 text-white" style="background: rgba(255,255,255,0.05);">
     <div class="container">
-      <div class="row g-4">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Escolha Seu Plano</h2>
+        <p class="lead">Todos os planos incluem garantia de qualidade e suporte especializado</p>
+      </div>
+      <div class="row g-4 justify-content-center">
         <!-- Plano Bronze -->
         <div class="col-lg-4 col-md-6">
           <div class="card h-100 shadow">
             <div class="card-header text-white text-center" style="background-color: #8B4513;">
               <h4 class="fw-bold mb-0">Bronze</h4>
             </div>
-            <div class="card-body text-center">
+            <div class="card-body text-center d-flex flex-column">
               <p class="card-text">Plano básico para manutenção essencial</p>
-              <ul class="list-unstyled">
-                <li><i class="bi bi-check-circle text-success"></i> Limpeza básica mensal</li>
-                <li><i class="bi bi-check-circle text-success"></i> Verificação de vírus</li>
-                <li><i class="bi bi-check-circle text-success"></i> Suporte por telefone</li>
-                <li><i class="bi bi-check-circle text-success"></i> Desconto de 10% em peças</li>
+              <ul class="list-unstyled flex-grow-1">
+                <li><i class="bi bi-check-circle text-success"></i> Limpeza básica periódicamente</li>
+                <li><i class="bi bi-check-circle text-success"></i> Reinstalação de sistema operacional</li>
+                <li><i class="bi bi-check-circle text-success"></i> Visitas técnicas pontuais</li>
+                <li><i class="bi bi-check-circle text-success"></i> Desconto de 7% em serviços</li>
+                <li><i class="bi bi-check-circle text-success"></i> De 1 a 4 máquinas</li>
               </ul>
-              <button class="btn text-white fw-bold" style="background-color: #8B4513;">Assinar Plano</button>
+              <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre os planos." target="_blank" class="btn text-white fw-bold mt-auto" style="background-color: #8B4513; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">Assinar Plano</a>
             </div>
           </div>
         </div>
 
         <!-- Plano Prata -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 position-relative">
+          <div class="badge bg-primary position-absolute" style="top: -20px; left: 50%; transform: translateX(-50%); z-index: 10;">Mais Popular</div>
           <div class="card h-100 shadow border-primary">
             <div class="card-header bg-secondary text-white text-center">
               <h4 class="fw-bold mb-0">Prata</h4>
-              <small class="badge bg-primary">Mais Popular</small>
             </div>
-            <div class="card-body text-center">
+            <div class="card-body text-center d-flex flex-column">
               <p class="card-text">Plano intermediário com mais benefícios</p>
-              <ul class="list-unstyled">
+              <ul class="list-unstyled flex-grow-1">
                 <li><i class="bi bi-check-circle text-success"></i> Limpeza completa quinzenal</li>
                 <li><i class="bi bi-check-circle text-success"></i> Antivírus premium</li>
                 <li><i class="bi bi-check-circle text-success"></i> Suporte presencial</li>
                 <li><i class="bi bi-check-circle text-success"></i> Desconto de 20% em peças</li>
                 <li><i class="bi bi-check-circle text-success"></i> Backup de dados</li>
               </ul>
-              <button class="btn btn-secondary fw-bold">Assinar Plano</button>
+              <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre os planos." target="_blank" class="btn btn-secondary fw-bold mt-auto" style="transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">Assinar Plano</a>
             </div>
           </div>
         </div>
@@ -88,9 +98,9 @@
             <div class="card-header text-white text-center" style="background-color: #B8860B;">
               <h4 class="fw-bold mb-0">Ouro</h4>
             </div>
-            <div class="card-body text-center">
+            <div class="card-body text-center d-flex flex-column">
               <p class="card-text">Plano premium com cobertura completa</p>
-              <ul class="list-unstyled">
+              <ul class="list-unstyled flex-grow-1">
                 <li><i class="bi bi-check-circle text-success"></i> Manutenção semanal</li>
                 <li><i class="bi bi-check-circle text-success"></i> Monitoramento 24/7</li>
                 <li><i class="bi bi-check-circle text-success"></i> Suporte prioritário</li>
@@ -98,7 +108,7 @@
                 <li><i class="bi bi-check-circle text-success"></i> Backup automático</li>
                 <li><i class="bi bi-check-circle text-success"></i> Equipamento reserva</li>
               </ul>
-              <button class="btn text-white fw-bold" style="background-color: #B8860B;">Assinar Plano</button>
+              <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre os planos." target="_blank" class="btn text-white fw-bold mt-auto" style="background-color: #B8860B; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">Assinar Plano</a>
             </div>
           </div>
         </div>
@@ -107,9 +117,9 @@
   </section>
 
   <!-- Seção de Depoimentos -->
-  <section class="py-5 bg-light">
+  <section class="py-5 text-white" style="background: transparent;">
     <div class="container">
-      <h2 class="text-center fw-bold text-primary mb-5">O que nossos clientes dizem</h2>
+      <h2 class="text-center fw-bold text-white mb-5">O que nossos clientes dizem</h2>
       <div id="depoimentosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -181,21 +191,39 @@
   </section>
 
   <!-- Seção Contato -->
-  <section id="contato" class="bg-primary text-white py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold">Contato</h2>
-      <p>Email: suporte@visaoinformaticapb.com.br | Telefone: (69) 3451-7869</p>
-      <p>Endereço: Av Presidente Kennedy, 292 - Pimenta Bueno/RO</p>
-      <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre os planos de manutenção." 
-         target="_blank" class="btn btn-light btn-whatsapp mt-3 text-dark">
-        <i class="bi bi-whatsapp text-dark fs-5"></i>
-        Entre em contato
-      </a>
+  <section id="contato" class="text-white py-5" style="background: rgba(255,255,255,0.05);">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="fw-bold mb-4">Pronto para Começar?</h2>
+          <p class="lead mb-5">Entre em contato conosco e escolha o plano ideal para suas necessidades</p>
+          <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+              <i class="bi bi-envelope fs-2 text-info mb-3"></i>
+              <h6>Email</h6>
+              <p class="text-light">suporte@visaoinformaticapb.com.br</p>
+            </div>
+            <div class="col-md-4 mb-4">
+              <i class="bi bi-telephone fs-2 text-success mb-3"></i>
+              <h6>Telefone</h6>
+              <p class="text-light">(69) 3451-7869</p>
+            </div>
+            <div class="col-md-4 mb-4">
+              <i class="bi bi-geo-alt fs-2 text-warning mb-3"></i>
+              <h6>Endereço</h6>
+              <p class="text-light">Av Presidente Kennedy, 292<br>Pimenta Bueno/RO</p>
+            </div>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre os planos." 
+             target="_blank" class="btn btn-light btn-lg mt-3">
+            <i class="bi bi-whatsapp text-success me-2 fs-5"></i>Fale Conosco Agora
+          </a>
+        </div>
+      </div>
     </div>
   </section>
-
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
+  <footer class="text-white text-center py-3 mt-auto" style="background: transparent;">
     <p class="mb-0">© 2025 Visão Informática. Todos os direitos reservados.</p>
   </footer>
 
