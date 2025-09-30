@@ -1,18 +1,20 @@
 /**
  * Main JavaScript file for Visão Informática website
- * Handles component loading, navigation, and interactive features
+ * Single Page Application (SPA) with dynamic content loading
  */
 
 class VisaoInformatica {
     constructor() {
+        this.currentPage = 'home';
         this.init();
     }
 
     async init() {
         await this.loadComponents();
         this.initNavigation();
+        this.initSPA();
         this.initInteractiveFeatures();
-        console.log("Visão Informática website loaded successfully!");
+        console.log("Visão Informática SPA loaded successfully!");
     }
 
     /**
@@ -49,12 +51,122 @@ class VisaoInformatica {
     }
 
     /**
+     * Initialize Single Page Application
+     */
+    initSPA() {
+        // Handle navigation clicks
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a[data-page]');
+            if (link) {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                this.navigateToPage(page);
+            }
+
+            // Handle hash links for navigation
+            const hashLink = e.target.closest('a[href^="#"]');
+            if (hashLink && hashLink.getAttribute('href').match(/^#(home|planos|sobre)$/)) {
+                e.preventDefault();
+                const page = hashLink.getAttribute('href').substring(1);
+                this.navigateToPage(page);
+            }
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', (e) => {
+            const page = e.state?.page || 'home';
+            this.navigateToPage(page, false);
+        });
+
+        // Set initial state
+        history.replaceState({ page: 'home' }, '', '#home');
+    }
+
+    /**
+     * Navigate to a specific page
+     */
+    async navigateToPage(page, addToHistory = true) {
+        if (page === this.currentPage) return;
+
+        // Hide all page contents
+        document.querySelectorAll('.page-content').forEach(content => {
+            content.style.display = 'none';
+            content.classList.remove('active');
+        });
+
+        // Show target page content
+        const targetContent = document.getElementById(`${page}-content`);
+        if (targetContent) {
+            // Load content if not already loaded
+            if (page !== 'home' && targetContent.innerHTML.trim() === '') {
+                await this.loadPageContent(page);
+            }
+            
+            // Show only the selected page content
+            targetContent.style.display = 'block';
+            targetContent.classList.add('active');
+            this.currentPage = page;
+
+            // Update navigation
+            this.setActiveNavItem(page);
+
+            // Update URL and history
+            if (addToHistory) {
+                history.pushState({ page }, '', `#${page}`);
+            }
+
+            // Update page title
+            this.updatePageTitle(page);
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+
+            // Reinitialize components for the new page
+            setTimeout(() => {
+                this.initContactSection();
+                if (page === 'sobre') {
+                    new ServicesManager();
+                }
+            }, 100);
+        }
+    }
+
+    /**
+     * Load page content dynamically
+     */
+    async loadPageContent(page) {
+        try {
+            const response = await fetch(`pages/${page}-content.html`);
+            if (response.ok) {
+                const content = await response.text();
+                const targetContent = document.getElementById(`${page}-content`);
+                targetContent.innerHTML = content;
+
+                // Load contact component for the page
+                await this.loadComponent(`#contact-placeholder-${page}`, 'components/contact.html');
+            }
+        } catch (error) {
+            console.error(`Error loading ${page} content:`, error);
+        }
+    }
+
+    /**
+     * Update page title based on current page
+     */
+    updatePageTitle(page) {
+        const titles = {
+            'home': 'Visão Informática',
+            'planos': 'Planos - Visão Informática',
+            'sobre': 'Sobre - Visão Informática'
+        };
+        document.title = titles[page] || titles['home'];
+    }
+
+    /**
      * Initialize navigation features
      */
     initNavigation() {
-        // Set active navigation item based on current page
-        const currentPage = this.getCurrentPage();
-        this.setActiveNavItem(currentPage);
+        // Navigation will be handled by SPA
     }
 
     /**
@@ -70,7 +182,6 @@ class VisaoInformatica {
      * Set active navigation item
      */
     setActiveNavItem(currentPage) {
-        // Wait for header to load
         setTimeout(() => {
             const navLinks = document.querySelectorAll('.nav-link[data-page]');
             navLinks.forEach(link => {
@@ -115,12 +226,12 @@ class VisaoInformatica {
      */
     initContactSection() {
         setTimeout(() => {
-            const currentPage = this.getCurrentPage();
-            const contactTitle = document.getElementById('contact-title');
-            const contactSubtitle = document.getElementById('contact-subtitle');
-            const whatsappBtn = document.getElementById('whatsapp-btn');
-
-            if (!contactTitle) return;
+            // Find all contact sections (main and page-specific)
+            const contactSections = [
+                document.getElementById('contact-title'),
+                document.querySelector('#contact-placeholder-planos #contact-title'),
+                document.querySelector('#contact-placeholder-sobre #contact-title')
+            ].filter(Boolean);
 
             const customizations = {
                 'planos': {
@@ -133,23 +244,34 @@ class VisaoInformatica {
                     subtitle: 'Estamos prontos para atender suas necessidades em tecnologia',
                     whatsappText: 'Olá! Gostaria de conhecer mais sobre a Visão Informática.'
                 },
-                'index': {
+                'home': {
                     title: 'Entre em Contato',
                     subtitle: 'Fale conosco para saber mais sobre nossos serviços',
                     whatsappText: 'Olá! Gostaria de conhecer os serviços da Visão Informática.'
                 }
             };
 
-            const config = customizations[currentPage] || customizations['index'];
+            const config = customizations[this.currentPage] || customizations['home'];
             
-            contactTitle.textContent = config.title;
-            contactSubtitle.textContent = config.subtitle;
-            
-            if (whatsappBtn) {
-                const whatsappUrl = `https://api.whatsapp.com/send?phone=556934517869&text=${encodeURIComponent(config.whatsappText)}`;
-                whatsappBtn.setAttribute('href', whatsappUrl);
-            }
-        }, 200);
+            // Update all contact sections
+            contactSections.forEach(section => {
+                if (section) {
+                    const container = section.closest('.contact-section');
+                    if (container) {
+                        const title = container.querySelector('#contact-title, [id*="contact-title"]');
+                        const subtitle = container.querySelector('#contact-subtitle, [id*="contact-subtitle"]');
+                        const whatsappBtn = container.querySelector('#whatsapp-btn, [id*="whatsapp-btn"]');
+
+                        if (title) title.textContent = config.title;
+                        if (subtitle) subtitle.textContent = config.subtitle;
+                        if (whatsappBtn) {
+                            const whatsappUrl = `https://api.whatsapp.com/send?phone=556934517869&text=${encodeURIComponent(config.whatsappText)}`;
+                            whatsappBtn.setAttribute('href', whatsappUrl);
+                        }
+                    }
+                }
+            });
+        }, 300);
     }
 }
 

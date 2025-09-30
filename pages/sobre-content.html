@@ -1,0 +1,82 @@
+<!-- Hero -->
+<header class="text-white py-5 section-bg-transparent">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold mb-4">Sobre a Visão Informática</h1>
+    <p class="lead mb-4">Especialistas em tecnologia com foco na excelência e satisfação do cliente</p>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="text-light">Conheça nossa história, missão e os serviços que oferecemos para manter sua tecnologia sempre funcionando</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Seção Missão -->
+<section class="py-5 text-white section-bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Nossa Missão</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="lead">Melhorar continuamente nossos serviços, buscando a excelência, qualidade e responsabilidade no apoio ao negócio de nossos parceiros e clientes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção História -->
+<section class="py-5 text-white section-bg-transparent">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-4">Nossa História</h2>
+        <p class="mb-3">A Visão Informática foi fundada em 28 de fevereiro de 2010, em Pimenta Bueno (RO), com foco em assistência técnica de computadores, impressoras, nobreaks e venda de hardware. Desde o início, buscou excelência, qualidade e responsabilidade, guiada por valores como ética, honestidade e respeito.</p>
+        <p class="mb-3">Seus valores — ética, honestidade, confiabilidade, transparência, responsabilidade, valorização e respeito — sustentam todas as interações internas e externas, promovendo relacionamentos duradouros com colaboradores, parceiros e clientes.</p>
+        <p>Com o slogan "Vendendo confiança aos nossos clientes sempre", consolidou-se como referência regional em serviços de informática. Sua equipe dedicada e compromisso com a melhoria contínua garantem relações duradouras com clientes, parceiros e colaboradores.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="img/foto visao.jpeg" class="img-fluid rounded shadow" alt="Visão Informática">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Serviços Prestados -->
+<section class="py-5 text-white section-bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Nossos Serviços</h2>
+      <p class="lead">Clique em cada serviço para conhecer mais detalhes</p>
+    </div>
+    <div class="text-center">
+      <div id="servicesButtons">
+        <button class="btn btn-computadores text-white" onclick="showService('computadores')">
+          <i class="bi bi-pc-display"></i> Computadores
+        </button>
+        <button class="btn btn-notebooks text-white" onclick="showService('notebooks')">
+          <i class="bi bi-laptop"></i> Notebooks
+        </button>
+        <button class="btn btn-nobreaks text-white" onclick="showService('nobreaks')">
+          <i class="bi bi-battery-charging"></i> Nobreaks
+        </button>
+        <button class="btn btn-impressoras text-white" onclick="showService('impressoras')">
+          <i class="bi bi-printer"></i> Impressoras
+        </button>
+      </div>
+
+      <!-- Box -->
+      <div class="service-box mx-auto mt-4" id="serviceBox">
+        <div class="text-center mb-3">
+          <img id="serviceImage" src="" alt="" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+        </div>
+        <h3 id="serviceTitle" class="text-center mb-3"></h3>
+        <div id="serviceContent" class="text-justify"></div>
+        <div class="text-center mt-4">
+          <button class="btn btn-primary" onclick="closeService()">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Component -->
+<div id="contact-placeholder-sobre"></div>

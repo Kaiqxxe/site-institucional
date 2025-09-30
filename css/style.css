@@ -391,3 +391,27 @@ footer {
 .fade-in {
     animation: fadeIn 0.6s ease-out;
 }
+
+/* ===== SPA STYLES ===== */
+.page-content {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.page-content.active {
+    display: block !important;
+}
+
+/* Hide all page contents by default except home */
+#home-content {
+    display: block;
+}
+
+/* Ensure smooth transitions */
+#main-content {
+    min-height: 60vh;
+}
+
+#mt-2{
+    align-items: center;
+}
