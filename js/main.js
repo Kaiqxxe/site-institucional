@@ -17,7 +17,6 @@ class VisaoInformatica {
 
     async init() {
         await this.loadComponents();
-        this.initNavigation();
         this.initSPA();
         this.initInteractiveFeatures();
         console.log("Visão Informática SPA loaded successfully!");
@@ -113,6 +112,7 @@ class VisaoInformatica {
 
         // Show target page content
         const targetContent = document.getElementById(`${page}-content`);
+        
         if (targetContent) {
             // Load content if not already loaded
             if (page !== 'home' && targetContent.innerHTML.trim() === '') {
