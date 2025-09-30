@@ -1,5 +1,5 @@
 <!-- Hero -->
-<header class="text-white py-5 section-bg-transparent">
+<header class="text-white py-5 section-bg transparent">
   <div class="container text-center">
     <h1 class="display-4 fw-bold mb-4">Planos de Manutenção</h1>
     <p class="lead mb-4">Escolha o plano ideal para manter seus equipamentos sempre funcionando perfeitamente</p>
@@ -21,59 +21,62 @@
     <div class="row g-4 justify-content-center">
       <!-- Plano Bronze -->
       <div class="col-lg-4 col-md-6">
-        <div class="card h-100 shadow">
-          <div class="card-header text-white text-center" style="background-color: #8B4513;">
+        <div class="card h-100 shadow plano-bronze-card plano-card">
+          <div class="card-header text-center plano-bronze-header">
+            <i class="bi bi-pc-display me-2 fs-4"></i>
             <h4 class="fw-bold mb-0">Bronze</h4>
           </div>
-          <div class="card-body text-center d-flex flex-column">
-            <p class="card-text">Plano básico para manutenção essencial</p>
+          <div class="card-body text-center d-flex flex-column plano-card-body">
+            <p class="card-text text-white">Plano básico para manutenção essencial</p>
             <ul class="list-unstyled flex-grow-1">
-              <li><i class="bi bi-check-circle text-success"></i> Limpeza básica periódicamente</li>
-              <li><i class="bi bi-check-circle text-success"></i> Reinstalação de sistema operacional</li>
-              <li><i class="bi bi-check-circle text-success"></i> Visitas técnicas pontuais</li>
-              <li><i class="bi bi-check-circle text-success"></i> De 1 a 4 máquinas</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-computadores"></i> Limpeza básica periódicamente</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-computadores"></i> Reinstalação de sistema operacional</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-computadores"></i> Visitas técnicas pontuais</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-computadores"></i> De 1 a 4 máquinas</li>
             </ul>
-            <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre os planos." target="_blank" class="btn text-white fw-bold mt-auto" style="background-color: #8B4513; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">Assinar Plano</a>
+            <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre o plano Bronze." target="_blank" class="btn fw-bold mt-auto plano-btn plano-btn-bronze">Assinar Plano</a>
           </div>
         </div>
       </div>
 
       <!-- Plano Prata -->
       <div class="col-lg-4 col-md-6 position-relative">
-        <div class="badge bg-primary position-absolute" style="top: -20px; left: 50%; transform: translateX(-50%); z-index: 10;">Mais Popular</div>
-        <div class="card h-100 shadow border-primary">
-          <div class="card-header bg-secondary text-white text-center">
+        <div class="badge position-absolute plano-badge">Mais Popular</div>
+        <div class="card h-100 shadow plano-prata-card plano-card">
+          <div class="card-header text-center plano-prata-header">
+            <i class="bi bi-laptop me-2 fs-4"></i>
             <h4 class="fw-bold mb-0">Prata</h4>
           </div>
-          <div class="card-body text-center d-flex flex-column">
-            <p class="card-text">Plano intermediário com mais benefícios</p>
+          <div class="card-body text-center d-flex flex-column plano-card-body">
+            <p class="card-text text-white">Plano intermediário com mais benefícios</p>
             <ul class="list-unstyled flex-grow-1">
-              <li><i class="bi bi-check-circle text-success"></i> Visitas técnicas pontuais</li>
-              <li><i class="bi bi-check-circle text-success"></i> Manutenção de computadores(semestral)</li>
-              <li><i class="bi bi-check-circle text-success"></i> Reinstalação de sistema operacional</li>
-              <li><i class="bi bi-check-circle text-success"></i> De 1 a 4 computadores</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-notebooks"></i> Visitas técnicas pontuais</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-notebooks"></i> Manutenção de computadores(semestral)</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-notebooks"></i> Reinstalação de sistema operacional</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-notebooks"></i> De 1 a 4 computadores</li>
             </ul>
-            <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre os planos." target="_blank" class="btn btn-secondary fw-bold mt-auto" style="transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">Assinar Plano</a>
+            <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre o plano Prata." target="_blank" class="btn fw-bold mt-auto plano-btn plano-btn-prata">Assinar Plano</a>
           </div>
         </div>
       </div>
 
       <!-- Plano Ouro -->
       <div class="col-lg-4 col-md-6">
-        <div class="card h-100 shadow">
-          <div class="card-header text-white text-center" style="background-color: #B8860B;">
+        <div class="card h-100 shadow plano-ouro-card plano-card">
+          <div class="card-header text-center plano-ouro-header">
+            <i class="bi bi-printer me-2 fs-4"></i>
             <h4 class="fw-bold mb-0">Ouro</h4>
           </div>
-          <div class="card-body text-center d-flex flex-column">
-            <p class="card-text">Plano premium com cobertura completa</p>
+          <div class="card-body text-center d-flex flex-column plano-card-body">
+            <p class="card-text text-white">Plano premium com cobertura completa</p>
             <ul class="list-unstyled flex-grow-1">
-              <li><i class="bi bi-check-circle text-success"></i> Visitas técnicas pontuais</li>
-              <li><i class="bi bi-check-circle text-success"></i> Limpeza das máquinas periódicamente</li>
-              <li><i class="bi bi-check-circle text-success"></i> Formatações ilimitadas</li>
-              <li><i class="bi bi-check-circle text-success"></i> Inclusão de impressoras e outros equipamentos</li>
-              <li><i class="bi bi-check-circle text-success"></i> Sem limite de máquinas</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-impressoras"></i> Visitas técnicas pontuais</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-impressoras"></i> Limpeza das máquinas periódicamente</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-impressoras"></i> Formatações ilimitadas</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-impressoras"></i> Inclusão de impressoras e outros equipamentos</li>
+              <li class="text-white mb-2"><i class="bi bi-check-circle me-2 icon-impressoras"></i> Sem limite de máquinas</li>
             </ul>
-            <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre os planos." target="_blank" class="btn text-white fw-bold mt-auto" style="background-color: #B8860B; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">Assinar Plano</a>
+            <a href="https://api.whatsapp.com/send?phone=556934517869&text=Olá! Gostaria de saber mais sobre o plano Ouro." target="_blank" class="btn fw-bold mt-auto plano-btn plano-btn-ouro">Assinar Plano</a>
           </div>
         </div>
       </div>
@@ -85,13 +88,18 @@
 <section class="py-5 text-white section-bg-transparent">
   <div class="container">
     <h2 class="text-center fw-bold text-white mb-5">O que nossos clientes dizem</h2>
-    <div id="depoimentosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" style="height: 250px;">
+    <div id="depoimentosCarousel" class="carousel slide depoimentos-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#depoimentosCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#depoimentosCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#depoimentosCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-              <div class="card border-0 shadow-sm">
-                <div class="card-body p-4">
+              <div class="card border-0 depoimento-card">
+                <div class="card-body p-4 depoimento-card-body">
                   <img src="img/kaique.png" 
                        class="rounded-circle mb-3" width="80" height="80" alt="Cliente">
                   <h5 class="fw-bold">Kaique Antunes</h5>
@@ -111,8 +119,8 @@
         <div class="carousel-item">
           <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-              <div class="card border-0 shadow-sm">
-                <div class="card-body p-4">
+              <div class="card border-0 depoimento-card">
+                <div class="card-body p-4 depoimento-card-body">
                   <img src="img/fabio.png" 
                        class="rounded-circle mb-3" width="80" height="80" alt="Cliente">
                   <h5 class="fw-bold">Fabio Matias</h5>
@@ -132,8 +140,8 @@
         <div class="carousel-item">
           <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-              <div class="card border-0 shadow-sm">
-                <div class="card-body p-4">
+              <div class="card border-0 depoimento-card">
+                <div class="card-body p-4 depoimento-card-body">
                   <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" 
                        class="rounded-circle mb-3" width="80" height="80" alt="Cliente">
                   <h5 class="fw-bold">Carlos Oliveira</h5>
@@ -151,6 +159,14 @@
           </div>
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
 </section>

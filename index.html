@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Visão Informática</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visão Informática - Soluções Completas em Tecnologia | Pimenta Bueno/RO</title>
+  <meta name="description" content="Especialistas em manutenção, suporte técnico e assistência em equipamentos de informática em Pimenta Bueno/RO. Planos personalizados e atendimento de qualidade.">
+  <meta name="keywords" content="informática, manutenção, suporte técnico, computadores, notebooks, impressoras, Pimenta Bueno, Rondônia">
+  <meta name="author" content="Visão Informática">
   <link rel="icon" type="image/png" href="img/logo redonda.png">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,26 +22,21 @@
   <main id="main-content">
     <!-- Home Content -->
     <div id="home-content" class="page-content active">
-      <!-- Hero -->
-  <header class="text-white py-5 section-bg-transparent">
+      <!-- Hero Section -->
+      <section class="hero-section text-white py-5 section-bg-transparent" role="banner">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
           <h1 class="display-4 fw-bold mb-4">Soluções Completas em Tecnologia</h1>
           <p class="lead mb-4">Especialistas em manutenção, suporte técnico e assistência em equipamentos de informática em Pimenta Bueno/RO</p>
-          <div class="d-flex gap-3">
-            <a href="https://api.whatsapp.com/send?phone=556934517869" target="_blank" class="btn btn-light btn-lg">
-              <i class="bi bi-whatsapp text-success me-2"></i>Fale Conosco
-            </a>
-            <a href="#planos" data-page="planos" class="btn btn-outline-light btn-lg">Ver Planos</a>
-          </div>
+
         </div>
         <div class="col-lg-6">
           <img src="img/foto visao.jpeg" class="img-fluid rounded shadow" alt="Visão Informática">
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- Seção Serviços -->
   <section class="py-5 text-white section-bg-light">
@@ -47,26 +45,96 @@
         <h2 class="fw-bold">Nossos Serviços</h2>
         <p class="lead">Oferecemos soluções completas em tecnologia</p>
       </div>
-      <div class="row g-4">
-        <div class="col-md-3 text-center">
-          <i class="bi bi-pc-display" style="font-size: 3rem; color: #4CAF50;"></i>
-          <h5 class="mt-3">Computadores</h5>
-          <p class="text-light">Manutenção, montagem e upgrades</p>
+      <div class="row services-row">
+        <!-- Navegação dos Serviços -->
+        <div class="col-md-4">
+          <div class="services-nav">
+            <button class="service-nav-btn active" data-service="computadores">
+              <i class="bi bi-pc-display icon-computadores"></i>
+              <span>Computadores</span>
+            </button>
+            <button class="service-nav-btn" data-service="notebooks">
+              <i class="bi bi-laptop icon-notebooks"></i>
+              <span>Notebooks</span>
+            </button>
+            <button class="service-nav-btn" data-service="impressoras">
+              <i class="bi bi-printer icon-impressoras"></i>
+              <span>Impressoras</span>
+            </button>
+            <button class="service-nav-btn" data-service="nobreaks">
+              <i class="bi bi-battery-charging icon-nobreaks"></i>
+              <span>Nobreaks</span>
+            </button>
+            <button class="service-nav-btn" data-service="servicos">
+              <i class="bi bi-shield-check icon-servicos"></i>
+              <span>Serviços</span>
+            </button>
+          </div>
         </div>
-        <div class="col-md-3 text-center">
-          <i class="bi bi-laptop" style="font-size: 3rem; color: #2196F3;"></i>
-          <h5 class="mt-3">Notebooks</h5>
-          <p class="text-light">Reparo e otimização completa</p>
-        </div>
-        <div class="col-md-3 text-center">
-          <i class="bi bi-printer" style="font-size: 3rem; color: #FF9800;"></i>
-          <h5 class="mt-3">Impressoras</h5>
-          <p class="text-light">Manutenção especializada</p>
-        </div>
-        <div class="col-md-3 text-center">
-          <i class="bi bi-shield-check" style="font-size: 3rem; color: #9C27B0;"></i>
-          <h5 class="mt-3">Suporte</h5>
-          <p class="text-light">Atendimento técnico</p>
+        
+        <!-- Conteúdo dos Serviços -->
+        <div class="col-md-8">
+          <div class="service-content-container">
+            <!-- Computadores -->
+            <div class="service-content active" id="computadores">
+              <h4 class="mb-3"><i class="bi bi-pc-display me-2 icon-computadores"></i>Computadores</h4>
+              <ul class="service-list">
+                <li>Formatação e reinstalação do sistema</li>
+                <li>Upgrades de hardware (memória, HD, SSD)</li>
+                <li>Montagem personalizada</li>
+                <li>Manutenção preventiva e limpeza</li>
+                <li>Diagnóstico e reparo de problemas</li>
+              </ul>
+            </div>
+            
+            <!-- Notebooks -->
+            <div class="service-content" id="notebooks">
+              <h4 class="mb-3"><i class="bi bi-laptop me-2 icon-notebooks"></i>Notebooks</h4>
+              <ul class="service-list">
+                <li>Troca de tela, teclado e touchpad</li>
+                <li>Limpeza interna e troca de pasta térmica</li>
+                <li>Otimização de desempenho</li>
+                <li>Reparo de conectores e portas</li>
+                <li>Reparo de Carcaça</li>
+              </ul>
+            </div>
+            
+            <!-- Impressoras -->
+            <div class="service-content" id="impressoras">
+              <h4 class="mb-3"><i class="bi bi-printer me-2 icon-impressoras"></i>Impressoras</h4>
+              <ul class="service-list">
+                <li>Reparo de mecanismos e sensores</li>
+                <li>Troca de peças e componentes</li>
+                <li>Configuração e instalação</li>
+                <li>Limpeza completa dos cabeçotes</li>
+                <li>Manutenção preventiva</li>
+              </ul>
+            </div>
+            
+            <!-- Nobreaks -->
+            <div class="service-content" id="nobreaks">
+              <h4 class="mb-3"><i class="bi bi-battery-charging me-2 icon-nobreaks"></i>Nobreaks</h4>
+              <ul class="service-list">
+                <li>Troca de baterias</li>
+                <li>Diagnóstico de falhas</li>
+                <li>Instalação de nobreaks</li>
+                <li>Teste de autonomia</li>
+                <li>Dimensionamento de Carga</li>
+              </ul>
+            </div>
+            
+            <!-- Serviços Gerais -->
+            <div class="service-content" id="servicos">
+              <h4 class="mb-3"><i class="bi bi-shield-check me-2 icon-servicos"></i>Serviços Gerais</h4>
+              <ul class="service-list">
+                <li>Consultoria em TI</li>
+                <li>Recuperação de dados</li>
+                <li>Instalação de redes e cabeamento</li>
+                <li>Configuração de software e antivírus</li>
+                <li>Suporte técnico remoto e presencial</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -131,29 +199,15 @@
       <!-- Contact Component -->
       <div id="contact-placeholder"></div>
 
-      <!-- Links Úteis -->
-  <section id="links" class="py-5 text-white section-bg-transparent">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4">Siga-nos nas Redes Sociais</h2>
-      <p class="lead mb-4">Fique por dentro das novidades e dicas de tecnologia</p>
-      <div class="d-flex justify-content-center gap-3">
-        <a href="https://www.facebook.com/VisaoInformaticaPB" target="_blank" class="btn btn-outline-light btn-lg">
-          <i class="bi bi-facebook me-2"></i>Facebook
-        </a>
-        <a href="https://www.instagram.com/visaoinformatica/" target="_blank" class="btn btn-outline-light btn-lg">
-          <i class="bi bi-instagram me-2"></i>Instagram
-        </a>
-      </div>
-    </div>
-  </section>
+
     </div>
     <!-- End Home Content -->
 
     <!-- Planos Content -->
-    <div id="planos-content" class="page-content" style="display: none;"></div>
+    <div id="planos-content" class="page-content page-content-hidden"></div>
 
     <!-- Sobre Content -->
-    <div id="sobre-content" class="page-content" style="display: none;"></div>
+    <div id="sobre-content" class="page-content page-content-hidden"></div>
   </main>
 
   <!-- Footer Component -->

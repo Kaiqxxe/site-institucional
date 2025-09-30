@@ -6,6 +6,12 @@
 class VisaoInformatica {
     constructor() {
         this.currentPage = 'home';
+        this.loadedPages = new Set(['home']);
+        
+        // Bind methods
+        this.handleNavClick = this.handleNavClick.bind(this);
+        this.handlePopState = this.handlePopState.bind(this);
+        
         this.init();
     }
 
@@ -55,31 +61,42 @@ class VisaoInformatica {
      */
     initSPA() {
         // Handle navigation clicks
-        document.addEventListener('click', (e) => {
-            const link = e.target.closest('a[data-page]');
-            if (link) {
-                e.preventDefault();
-                const page = link.getAttribute('data-page');
-                this.navigateToPage(page);
-            }
-
-            // Handle hash links for navigation
-            const hashLink = e.target.closest('a[href^="#"]');
-            if (hashLink && hashLink.getAttribute('href').match(/^#(home|planos|sobre)$/)) {
-                e.preventDefault();
-                const page = hashLink.getAttribute('href').substring(1);
-                this.navigateToPage(page);
-            }
-        });
+        document.addEventListener('click', this.handleNavClick);
 
         // Handle browser back/forward buttons
-        window.addEventListener('popstate', (e) => {
-            const page = e.state?.page || 'home';
-            this.navigateToPage(page, false);
-        });
+        window.addEventListener('popstate', this.handlePopState);
 
         // Set initial state
         history.replaceState({ page: 'home' }, '', '#home');
+    }
+
+    /**
+     * Handle navigation clicks
+     */
+    handleNavClick(e) {
+        const link = e.target.closest('a[data-page]');
+        if (link) {
+            e.preventDefault();
+            const page = link.getAttribute('data-page');
+            this.navigateToPage(page);
+            return;
+        }
+
+        // Handle hash links for navigation
+        const hashLink = e.target.closest('a[href^="#"]');
+        if (hashLink && hashLink.getAttribute('href').match(/^#(home|planos|sobre)$/)) {
+            e.preventDefault();
+            const page = hashLink.getAttribute('href').substring(1);
+            this.navigateToPage(page);
+        }
+    }
+
+    /**
+     * Handle browser history changes
+     */
+    handlePopState(e) {
+        const page = e.state?.page || 'home';
+        this.navigateToPage(page, false);
     }
 
     /**
@@ -162,12 +179,7 @@ class VisaoInformatica {
         document.title = titles[page] || titles['home'];
     }
 
-    /**
-     * Initialize navigation features
-     */
-    initNavigation() {
-        // Navigation will be handled by SPA
-    }
+
 
     /**
      * Get current page name from URL
@@ -199,6 +211,7 @@ class VisaoInformatica {
     initInteractiveFeatures() {
         this.initSmoothScrolling();
         this.initContactSection();
+        this.initServicesCarousel();
     }
 
     /**
@@ -273,96 +286,49 @@ class VisaoInformatica {
             });
         }, 300);
     }
-}
 
-// Services functionality for sobre.html
-class ServicesManager {
-    constructor() {
-        this.services = {
-            computadores: {
-                title: "Computadores",
-                image: "https://copilot.microsoft.com/th/id/BCO.88e33247-b138-4d1b-ac10-9c51aca20d63.png",
-                content: `<strong>Assistência técnica completa em computadores:</strong>
-                          <ul class="mt-2">
-                            <li>Formatação e reinstalação do sistema</li>
-                            <li>Upgrades de hardware (memória, HD, SSD)</li>
-                            <li>Montagem personalizada</li>
-                            <li>Manutenção preventiva e limpeza</li>
-                            <li>Diagnóstico e reparo de problemas</li>
-                          </ul>`
-            },
-            notebooks: {
-                title: "Notebooks",
-                image: "https://copilot.microsoft.com/th/id/BCO.f2b48056-d88b-425c-bfee-83ad951999e6.png",
-                content: `<strong>Serviços especializados para notebooks:</strong>
-                          <ul class="mt-2">
-                            <li>Troca de tela, teclado e touchpad</li>
-                            <li>Limpeza interna e troca de pasta térmica</li>
-                            <li>Otimização de desempenho</li>
-                            <li>Reparo de conectores e portas</li>
-                            <li>Suporte técnico especializado</li>
-                          </ul>`
-            },
-            nobreaks: {
-                title: "Nobreaks",
-                image: "https://copilot.microsoft.com/th/id/BCO.0dd0e0d7-049e-4321-bf92-7054f6818089.png",
-                content: `<strong>Manutenção completa em nobreaks:</strong>
-                          <ul class="mt-2">
-                            <li>Troca de bateria e teste de autonomia</li>
-                            <li>Reparos eletrônicos e calibração</li>
-                            <li>Testes de carga e estabilização</li>
-                            <li>Limpeza e manutenção preventiva</li>
-                            <li>Suporte técnico especializado</li>
-                          </ul>`
-            },
-            impressoras: {
-                title: "Impressoras",
-                image: "https://copilot.microsoft.com/th/id/BCO.694ef720-2af9-43db-9b6a-b8cf1ae0e531.png",
-                content: `<strong>Assistência em impressoras jato de tinta e laser:</strong>
-                          <ul class="mt-2">
-                            <li>Reparo de mecanismos e sensores</li>
-                            <li>Troca de peças e componentes</li>
-                            <li>Configuração e instalação</li>
-                            <li>Limpeza completa dos cabeçotes</li>
-                            <li>Manutenção preventiva</li>
-                          </ul>`
+    /**
+     * Initialize services carousel
+     */
+    initServicesCarousel() {
+        // Handle service navigation clicks
+        document.addEventListener('click', (e) => {
+            const serviceBtn = e.target.closest('.service-nav-btn');
+            if (serviceBtn) {
+                const service = serviceBtn.getAttribute('data-service');
+                this.showService(service);
             }
-        };
-
-        // Make methods available globally for onclick handlers
-        window.showService = this.showService.bind(this);
-        window.closeService = this.closeService.bind(this);
+        });
     }
 
-    showService(serviceKey) {
-        const service = this.services[serviceKey];
-        if (!service) return;
+    /**
+     * Show specific service content
+     */
+    showService(serviceId) {
+        // Remove active class from all buttons
+        document.querySelectorAll('.service-nav-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
 
-        const titleElement = document.getElementById("serviceTitle");
-        const contentElement = document.getElementById("serviceContent");
-        const imageElement = document.getElementById("serviceImage");
-        const boxElement = document.getElementById("serviceBox");
-        const buttonsElement = document.getElementById("servicesButtons");
-
-        if (titleElement) titleElement.textContent = service.title;
-        if (contentElement) contentElement.innerHTML = service.content;
-        if (imageElement) {
-            imageElement.src = service.image;
-            imageElement.alt = service.title;
+        // Add active class to clicked button
+        const activeBtn = document.querySelector(`[data-service="${serviceId}"]`);
+        if (activeBtn) {
+            activeBtn.classList.add('active');
         }
 
-        if (boxElement) boxElement.classList.add("active");
-        if (buttonsElement) buttonsElement.classList.add("collapsed");
-    }
+        // Hide all service contents
+        document.querySelectorAll('.service-content').forEach(content => {
+            content.classList.remove('active');
+        });
 
-    closeService() {
-        const boxElement = document.getElementById("serviceBox");
-        const buttonsElement = document.getElementById("servicesButtons");
-
-        if (boxElement) boxElement.classList.remove("active");
-        if (buttonsElement) buttonsElement.classList.remove("collapsed");
+        // Show selected service content
+        const activeContent = document.getElementById(serviceId);
+        if (activeContent) {
+            activeContent.classList.add('active');
+        }
     }
 }
+
 
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {

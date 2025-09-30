@@ -1,16 +1,39 @@
-# Visão Informática - Site Institucional
+# 🖥️ Visão Informática - Site Institucional
 
-Este é o site institucional da Visão Informática, uma empresa especializada em assistência técnica e manutenção de equipamentos de informática em Pimenta Bueno/RO.
+Site institucional moderno da Visão Informática, empresa especializada em assistência técnica e manutenção de equipamentos de informática em Pimenta Bueno/RO.
+
+## 📋 Sobre o Projeto
+
+Site desenvolvido como Single Page Application (SPA) com arquitetura de componentes, seguindo as melhores práticas de desenvolvimento web front-end.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **HTML5**: Estrutura semântica e acessível
+- **CSS3**: Variáveis CSS, Flexbox, Grid, Gradientes
+- **JavaScript ES6+**: Classes, Async/Await, Módulos
+- **Bootstrap 5.3.3**: Framework CSS responsivo
+- **Bootstrap Icons**: Biblioteca de ícones
+
+## 🎯 Características Principais
+
+- ✅ **Single Page Application (SPA)** com navegação fluida
+- ✅ **Arquitetura de Componentes** reutilizáveis
+- ✅ **Design Responsivo** para todos os dispositivos
+- ✅ **Performance Otimizada** com carregamento dinâmico
+- ✅ **SEO Friendly** com meta tags otimizadas
+- ✅ **Acessibilidade** seguindo padrões WCAG
 
 ## 🚀 Melhorias Implementadas (Refatoração)
 
 ### ✅ Componentes Reutilizáveis
+
 - **Header/Navbar**: Componente único para navegação em todas as páginas
 - **Footer**: Rodapé padronizado reutilizável
 - **Seção de Contato**: Componente dinâmico que se adapta ao contexto de cada página
 - **Scripts e CSS**: Centralizados para fácil manutenção
 
 ### ✅ CSS Otimizado
+
 - **Variáveis CSS**: Cores, espaçamentos e transições centralizadas
 - **Classes Utilitárias**: `.section-bg-light`, `.section-bg-transparent` para backgrounds
 - **Organização por Seções**: Navegação, Botões, Layout, Footer, etc.
@@ -18,6 +41,7 @@ Este é o site institucional da Visão Informática, uma empresa especializada e
 - **Remoção de Duplicações**: Estilos inline convertidos para classes reutilizáveis
 
 ### ✅ JavaScript Modular
+
 - **Classe Principal**: `VisaoInformatica` para gerenciar funcionalidades globais
 - **Carregamento Dinâmico**: Componentes HTML carregados via JavaScript
 - **Navegação Inteligente**: Destaque automático da página atual
@@ -25,6 +49,7 @@ Este é o site institucional da Visão Informática, uma empresa especializada e
 - **Customização Contextual**: Seção de contato se adapta ao conteúdo de cada página
 
 ### ✅ Estrutura de Arquivos
+
 ```
 ├── components/
 │   ├── header.html      # Navegação reutilizável
@@ -46,16 +71,19 @@ Este é o site institucional da Visão Informática, uma empresa especializada e
 ## 🎯 Benefícios da Refatoração
 
 ### Manutenibilidade
+
 - **DRY (Don't Repeat Yourself)**: Código duplicado foi eliminado
 - **Componentes**: Mudanças no header/footer/contato afetam todas as páginas automaticamente
 - **CSS Centralizado**: Alterações de estilo são feitas em um único lugar
 
 ### Performance
+
 - **CSS Otimizado**: Menos código, melhor performance
 - **JavaScript Eficiente**: Carregamento sob demanda e funcionalidades modulares
 - **Reutilização**: Componentes carregados uma vez, usados em múltiplas páginas
 
 ### Escalabilidade
+
 - **Fácil Adição de Páginas**: Nova página usa os mesmos componentes
 - **Customização**: Cada página pode personalizar componentes conforme necessário
 - **Padrões Consistentes**: Interface uniforme em todo o site
@@ -85,15 +113,5 @@ Este é o site institucional da Visão Informática, uma empresa especializada e
 - **Integração WhatsApp**: Links diretos com mensagens personalizadas
 - **Carrossel de Imagens**: Galeria interativa
 - **Formulários de Contato**: Integração com WhatsApp
-
-## 📈 Melhorias Futuras
-
-- [ ] Sistema de CMS para edição de conteúdo
-- [ ] Otimização de imagens automática
-- [ ] PWA (Progressive Web App)
-- [ ] Integração com Analytics
-- [ ] Sistema de blog/notícias
-
----
 
 **Desenvolvido com ❤️ para Visão Informática**

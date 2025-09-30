@@ -1,5 +1,5 @@
 <!-- Seção de Contato Reutilizável -->
-<section class="contact-section text-white py-5" style="background: rgba(255,255,255,0.05);">
+<section class="contact-section contact-section-bg text-white py-5">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
@@ -17,15 +17,22 @@
             <p class="text-light">(69) 3451-7869</p>
           </div>
           <div class="col-md-4 mb-4">
+            <a href="https://www.google.com/maps/place/Av+Presidente+Kennedy,+292,+Pimenta+Bueno/RO" target="_blank" class="text-light">
             <i class="bi bi-geo-alt fs-2 text-warning mb-3"></i>
             <h6>Endereço</h6>
-            <p class="text-light">Av Presidente Kennedy, 292<br>Pimenta Bueno/RO</p>
+            Av Presidente Kennedy, 292<br>Pimenta Bueno/RO</a>
           </div>
         </div>
-        <a href="https://api.whatsapp.com/send?phone=556934517869" 
-           target="_blank" class="btn btn-light btn-lg mt-3" id="whatsapp-btn">
-          <i class="bi bi-whatsapp text-success me-2 fs-5"></i>Fale Conosco
-        </a>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a href="https://api.whatsapp.com/send?phone=556934517869" 
+             target="_blank" class="btn btn-success btn-lg contact-btn" id="whatsapp-btn">
+            <i class="bi bi-whatsapp me-2 fs-5"></i>Fale Conosco
+          </a>
+          <a href="#planos" data-page="planos"
+             class="btn btn-primary btn-lg contact-btn">
+            <i class="bi bi-clipboard-check me-2 fs-5"></i>Ver Planos
+          </a>
+        </div>
       </div>
     </div>
   </div>
